@@ -3,9 +3,10 @@ __module_version__ = "1.0.0"
 __module_description__ = "Auto answer" 
 
 print "\0034",__module_name__, __module_version__,"has been loaded\003"
+
+import xchat
 import re
 import csv
-import xchat
 import Levenshtein
 
 def on_message(data, something, somethingb):
