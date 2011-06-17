@@ -1,0 +1,31 @@
+Script for pwning #linkomanija quiz
+
+Script consits of two parts:
+ * mining questions from #mokslas log stored online
+ * script for xchat for answer suggestion/auto answer
+
+Mining uses scrappy and mines data from http://irclogs.manoerdve.com/log/2009-01-17/mokslas/
+It goes through all links ending mokslas/$ and parses questions/answers to items
+
+XChat script after question from Anna parses questions, searches for it in questions database
+and tries to match question by approximate string matching (thanks to Levenshtein). Then prints best
+possible match.
+
+Mining requirements:
+ * scrapy (pip install scrapy)
+
+xchat script requirements:
+ * Levenshtein (sudo apt-get install python-levenshtein
+
+== Running crawler ==
+
+Running crawler (mining):
+ scrapy crawl viktorina --set FEED_URI=questions.csv --set FEED_FORMAT=csv
+
+Additional data processing (removes non printable characters, remove duplicate lines):
+ cat questions.csv | tr -dc "[:alnum:][:space:][:punct:]" | sort | uniq > questions.csv
+
+== Running xchat script ==
+ /py load <path>autoanswer.py
+
+Credits to Viki http://code.google.com/p/annaircbot/ for writing bot
