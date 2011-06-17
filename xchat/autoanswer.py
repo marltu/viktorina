@@ -1,4 +1,4 @@
-__module_name__ = "Marius survey script" 
+__module_name__ = "Marius quiz script" 
 __module_version__ = "1.0.0" 
 __module_description__ = "Auto answer" 
 
@@ -14,7 +14,7 @@ def on_message(data, something, somethingb):
     
     answers = csv.reader(open('/home/mariuskde/workspace/viktorina/viktorina_uniq_printable.txt', 'r'))
 
-    if (nick == "Anna" or nick == "mar"):
+    if (nick == "Anna"):
         match = re.match(".*[0-9]+th Quiz Question:\x02 (.*)$", message)
         if (match):
             question = match.group(1).replace("\xc2\xa0", " ").upper()
