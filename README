@@ -15,7 +15,7 @@ Mining requirements:
  * scrapy (pip install scrapy)
 
 xchat script requirements:
- * Levenshtein (sudo apt-get install python-levenshtein
+ * Levenshtein (sudo apt-get install python-levenshtein)
 
 == Running crawler ==
 
