@@ -18,7 +18,7 @@ def on_message(data, something, somethingb):
             question = match.group(1).replace("\xc2\xa0", " ").upper()
             best_ratio = 0.0
             best_answer = None
-            answers = csv.reader(open('/home/mariuskde/workspace/viktorina/viktorina_uniq_printable.txt', 'r'))
+            answers = csv.reader(open('../db/questions.csv', 'r'))
             for row in answers:
                 test_answer, test_question = row
                 ratio = Levenshtein.ratio(test_question, question)
