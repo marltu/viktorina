@@ -9,3 +9,7 @@ class ViktorinaItem(Item):
     # define the fields for your item here like:
     question = Field()
     answer = Field()
+
+class URLItem(Item):
+    url = Field()
+    data = Field()

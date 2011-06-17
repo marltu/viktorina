@@ -13,6 +13,6 @@ SPIDER_MODULES = ['viktorina.spiders']
 NEWSPIDER_MODULE = 'viktorina.spiders'
 DEFAULT_ITEM_CLASS = 'viktorina.items.ViktorinaItem'
 USER_AGENT = '%s/%s' % (BOT_NAME, BOT_VERSION)
+CONCURRENT_SPIDERS = 30
 
 #DOWNLOAD_DELAY = 0.25
-LOG_LEVEL = 'INFO'

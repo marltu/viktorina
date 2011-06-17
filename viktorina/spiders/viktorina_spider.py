@@ -6,14 +6,14 @@ from viktorina.items import ViktorinaItem
 
 
 class ViktorinaSpider(CrawlSpider):
-    name = "irclogs.manoerve.com"
+    name = "viktorina"
     allowed_domains = ["irclogs.manoerdve.com"]
     start_urls = [
-        "http://irclogs.manoerdve.com/log/2007-07-01/mokslas/",
+        "http://irclogs.manoerdve.com/log/2009-01-17/mokslas/",
     ]
 
     rules = (
-        Rule(SgmlLinkExtractor(allow = ("/mokslas/$",)), callback='parse_item'),
+        Rule(SgmlLinkExtractor(allow = ("mokslas/$",)), callback='parse_item', follow = True),
     )
 
     def parse_item(self, response):
